@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Disk Information",
+    "\\TCPClient",
+    "\\TCPServer",
+    "\\TCPServer\\Model"
+  ],
+  "SelectedNode": "\\TCPClient\\DiskHandler.cs",
+  "PreviewInSolutionExplorer": false
+}
