@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management;
@@ -44,21 +45,6 @@ namespace TCPServer
             Repository.Clear();
             OnClientConnectionStateChanged?.Invoke(Repository.Clients);
         }
-
-        //HardDisk hardDisk { get; set; }
-        //public void getInfoHardDisk()
-        //{
-        //    ManagementObjectSearcher diskInfors = new ManagementObjectSearcher("Select * from Win32_Diskdrive");
-        //    foreach (ManagementObject diskInfo in diskInfors.Get())
-        //    {
-        //        hardDisk = new HardDisk();
-
-        //        hardDisk.physicalName = diskInfo["MediaType"].ToString();
-        //        hardDisk.serialNumber = diskInfo["serial"].ToString();
-        //        hardDisk.totalSize = diskInfo["size"].ToString();
-        //        hardDisk.freeSize = diskInfo["size"].ToString();
-        //    }
-        //}
         public void Connect(string ipAddress, int port)
         {
             if (!IsListening())
@@ -88,20 +74,22 @@ namespace TCPServer
 
         public void Receive(Socket socket)
         {
-            DTOresponse res = ProcessRequest(socket);
-            if(res != null)
+            var res = ProcessRequest(socket);
+            if (res != null)
             {
-                string m = res.Serialize();
-                MessageBox.Show(m);
+                foreach (var info in res)
+                {
+                    MessageBox.Show(info.nameDisk);
+                }
 
             }
             else
             {
-                MessageBox.Show("aa");
-            }    
+                MessageBox.Show("Not read");
+            }
         }
 
-        public DTOresponse ProcessRequest(Socket clientSocket)
+        public List<DTOresponse> ProcessRequest(Socket clientSocket)
         {
             byte[] buffer = new byte[1024];
             int size = clientSocket.Receive(buffer);
@@ -109,25 +97,13 @@ namespace TCPServer
             {
                 return null;
             }
-            DTOrequest request = DTOrequest.Deserialize(Encoding.UTF8.GetString(buffer).Replace("\0", ""));
-            
-            return new DTOresponse
-            {
-                diskInf = request.NameDisk,
-                SerialNumber = request.SerialNumber,
-                driveFormat = request.driveFormat,
-                driveType = request.driveType,
-                totalSize = request.totalSize,
-                freeSpace = request.freeSpace,
-                BytesPerSector = request.BytesPerSector,
-                SectorsPerCluster = request.SectorsPerCluster
-            };
-
+            var request = JsonConvert.DeserializeObject<List<DTOresponse>>(Encoding.UTF8.GetString(buffer));
+            return request;
         }
 
 
 
-            public void Send(string IP, string message)
+        public void Send(string IP, string message)
         {
             Socket socket = Repository.ClientSockets.FirstOrDefault(x => x.RemoteEndPoint.ToString() == IP);
             socket.Send(Encoding.UTF8.GetBytes(message));

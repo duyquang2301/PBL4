@@ -28,11 +28,12 @@ namespace TCPClient
                 data.serialNumber = diskInfo["SerialNumber"].ToString();
             }
             return data;
-        }   
-        public HardDisk getInfomationHardDisk()
-        {         
+        }
+        public List<HardDisk> getInfomationHardDisk()
+        {
             DriveInfo[] driveInfo = DriveInfo.GetDrives();
-            HardDisk data = new HardDisk();
+            HardDisk serial = new HardDisk();
+            List<HardDisk> hardDisks = new List<HardDisk>();
             foreach (DriveInfo drive in driveInfo)
             {
                 ulong sectorsPerCluster, bytesPerSector, numberOfFreeClusters, totalNumberOfClusters;
@@ -41,19 +42,19 @@ namespace TCPClient
                                  out bytesPerSector,
                                  out numberOfFreeClusters,
                                  out totalNumberOfClusters);
-                data = new HardDisk
-                {
-                    physicalName = drive.Name,
-                    driveType = drive.DriveType.ToString(),
-                    driveFormat = drive.DriveFormat,
-                    totalSize = drive.TotalSize,
-                    freeSpace = drive.TotalFreeSpace,      
-                    sectorsPerClusters = sectorsPerCluster,
-                    bytesPerSectors = bytesPerSector,
-            };
+                var data = new HardDisk();
+                data.physicalName = drive.Name;
+                data.driveType = drive.DriveType.ToString();
+                data.driveFormat = drive.DriveFormat;
+                data.totalSize = drive.TotalSize;
+                data.freeSpace = drive.TotalFreeSpace;
+                data.sectorsPerClusters = sectorsPerCluster;
+                data.bytesPerSectors = bytesPerSector;
+
+                hardDisks.Add(data);
             }
-             data=getSerialNumberHardDisk(data);
-            return data;
+            hardDisks.Add(getSerialNumberHardDisk(serial));
+            return hardDisks;
         }
     }
 }

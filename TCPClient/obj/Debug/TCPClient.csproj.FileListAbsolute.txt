@@ -88,3 +88,18 @@ D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\TCPClient\obj\Debug\TCPClient.csproj
 D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\TCPClient\obj\Debug\TCPClient.csproj.CopyComplete
 D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\TCPClient\obj\Debug\TCPClient.exe
 D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\TCPClient\obj\Debug\TCPClient.pdb
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\bin\Debug\TCPClient.exe.config
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\bin\Debug\TCPClient.exe
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\bin\Debug\TCPClient.pdb
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\bin\Debug\SimpleTCP.dll
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.csproj.AssemblyReference.cache
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.Form1.resources
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.Properties.Resources.resources
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.csproj.GenerateResource.cache
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.csproj.CopyComplete
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.exe
+C:\Users\Admin\Source\Repos\PBL4_1\TCPClient\obj\Debug\TCPClient.pdb

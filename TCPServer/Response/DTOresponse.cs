@@ -9,7 +9,7 @@ namespace TCPServer.Response
 {
     public class DTOresponse
     {
-        public string diskInf { get; set; }
+        public string nameDisk { get; set; }
 
         public string SerialNumber { get; set; }
 

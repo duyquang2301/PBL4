@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -45,18 +46,23 @@ namespace TCPClient
                             {
                                 case "info":
                                     {
-                                        var disk = new DiskHandler().getInfomationHardDisk();
-                                        clients.send(new DTOrequest
+                                        var disks = new DiskHandler().getInfomationHardDisk();
+                                        List<DTOrequest> list = new List<DTOrequest>();
+                                        foreach (var disk in disks)
                                         {
-                                            NameDisk = disk.physicalName,
-                                            SerialNumber = disk.serialNumber,
-                                            driveType = disk.driveType,
-                                            driveFormat = disk.driveFormat,
-                                            totalSize = disk.totalSize,
-                                            freeSpace = disk.freeSpace,
-                                            SectorsPerCluster = disk.sectorsPerClusters,
-                                            BytesPerSector = disk.bytesPerSectors
-                                        });
+                                            list.Add(new DTOrequest
+                                            {
+                                                NameDisk = disk.physicalName,
+                                                SerialNumber = disk.serialNumber,
+                                                driveType = disk.driveType,
+                                                driveFormat = disk.driveFormat,
+                                                totalSize = disk.totalSize,
+                                                freeSpace = disk.freeSpace,
+                                                SectorsPerCluster = disk.sectorsPerClusters,
+                                                BytesPerSector = disk.bytesPerSectors
+                                            });
+                                        }
+                                        socket.Send(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(list)));
                                         break;
                                     }
 
