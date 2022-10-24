@@ -30,22 +30,33 @@ namespace TCPServer
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            tbStatus.Text += "server start" + Environment.NewLine;
-            //IPAddress ip = IPAddress.Parse(tbIP.Text);
-            //server.Start(ip, Convert.ToInt32(tbPort.Text));
-            string ipAddress = tbIP.Text;
-            int port = Convert.ToInt32(tbPort.Text);
-            server.Connect(ipAddress, port);
+            if (!server.IsListening())
+            {
+                string ipAddress = tbIP.Text;
+                int port = Convert.ToInt32(tbPort.Text);
+                server.Connect(ipAddress, port);
+                tbStatus.Text = "Server running";
+            }
+            else
+            {
+                MessageBox.Show("Server are running");
+            }
+            
 
         }
 
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            //if(server.IsStarted)
-            //{
-            //    server.Stop();
-            //}
+            if (server.IsListening())
+            {
+                server.Stop();
+                tbStatus.Text = "Server turn off";
+            }
+            else
+            {
+                MessageBox.Show("Server not start");
+            }    
         }
         public void UpdateClient(List<Client> clients)
         {
@@ -69,5 +80,6 @@ namespace TCPServer
             string IP = dgvClient.SelectedRows[0].Cells["IP"].Value.ToString();
             server.Send(IP, "info");
         }
+        
     }
 }

@@ -17,6 +17,7 @@ namespace TCPServer
     {
         private Socket Socket;
 
+
         private Repository Repository;
 
         public Action<List<Client>> OnClientConnectionStateChanged;
@@ -25,6 +26,25 @@ namespace TCPServer
             Repository = new Repository();
         }
         public List<Client> clients { get; set; }
+
+
+
+        internal void Stop()
+        {
+            foreach (Socket clientSocket in Repository.ClientSockets)
+            {
+                clientSocket.Shutdown(SocketShutdown.Both);
+            }
+
+            if (Socket != null)
+            {
+                Socket.Close();
+            }
+
+            Repository.Clear();
+            OnClientConnectionStateChanged?.Invoke(Repository.Clients);
+        }
+
         //HardDisk hardDisk { get; set; }
         //public void getInfoHardDisk()
         //{
@@ -72,7 +92,7 @@ namespace TCPServer
             if(res != null)
             {
                 string m = res.Serialize();
-                MessageBox.Show(res.SerialNumber);
+                MessageBox.Show(m);
 
             }
             else
@@ -93,12 +113,14 @@ namespace TCPServer
             
             return new DTOresponse
             {
-                diskInf = request.diskInf,
+                diskInf = request.NameDisk,
                 SerialNumber = request.SerialNumber,
+                driveFormat = request.driveFormat,
+                driveType = request.driveType,
                 totalSize = request.totalSize,
+                freeSpace = request.freeSpace,
                 BytesPerSector = request.BytesPerSector,
-                Sector = request.Sector,
-                SectorsPerTrack = request.SectorsPerTrack
+                SectorsPerCluster = request.SectorsPerCluster
             };
 
         }

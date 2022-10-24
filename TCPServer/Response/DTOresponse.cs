@@ -13,11 +13,12 @@ namespace TCPServer.Response
 
         public string SerialNumber { get; set; }
 
-        public string totalSize { get; set; }
-
-        public string BytesPerSector { get; set; }
-        public string Sector { get; set; }
-        public string SectorsPerTrack { get; set; }
+        public string driveFormat { get; set; }
+        public string driveType { get; set; }
+        public double totalSize { get; set; }
+        public double freeSpace { get; set; }
+        public ulong BytesPerSector { get; set; }
+        public ulong SectorsPerCluster { get; set; }
 
         public static DTOresponse Deserialize(string obj)
         {

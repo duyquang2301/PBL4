@@ -96,7 +96,6 @@
             this.btnSend.TabIndex = 11;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // tbstatus
             // 
@@ -121,7 +120,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,4 @@
-﻿using SimpleTCP;
+﻿    using SimpleTCP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,10 +31,6 @@ namespace TCPClient
             
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-            //client.WriteLineAndGetReply(tbmsg.Text, TimeSpan.FromSeconds(2));
 
-        }
     }
 }
