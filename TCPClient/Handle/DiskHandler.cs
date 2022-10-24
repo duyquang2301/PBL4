@@ -18,16 +18,14 @@ namespace TCPClient
                                          out ulong lpBytesPerSector,
                                          out ulong lpNumberOfFreeClusters,
                                          out ulong lpTotalNumberOfClusters);
-        public HardDisk getSerialNumberHardDisk()
-        {   
-            ManagementObjectSearcher diskInfors = new ManagementObjectSearcher("Select * from Win32_PhysicalMedia");
-            HardDisk data = new HardDisk();
+        public HardDisk getSerialNumberHardDisk(HardDisk data)
+        {
+           
+            ManagementObjectSearcher diskInfors = new ManagementObjectSearcher("Select * from Win32_Diskdrive");
+           
             foreach (ManagementObject diskInfo in diskInfors.Get())
             {
-                data = new HardDisk
-                {
-                    serialNumber = diskInfo["SerialNumber"].ToString(),
-                };
+                data.serialNumber = diskInfo["SerialNumber"].ToString();
             }
             return data;
         }   
@@ -49,11 +47,12 @@ namespace TCPClient
                     driveType = drive.DriveType.ToString(),
                     driveFormat = drive.DriveFormat,
                     totalSize = drive.TotalSize,
-                    freeSpace = drive.TotalFreeSpace,
+                    freeSpace = drive.TotalFreeSpace,      
                     sectorsPerClusters = sectorsPerCluster,
                     bytesPerSectors = bytesPerSector,
             };
             }
+             data=getSerialNumberHardDisk(data);
             return data;
         }
     }

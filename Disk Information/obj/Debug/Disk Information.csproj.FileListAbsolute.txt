@@ -42,3 +42,14 @@ D:\Study\Năm 3-Kì 1\PBL4\PBL4\Disk Information\obj\Debug\Disk Information.cspr
 D:\Study\Năm 3-Kì 1\PBL4\PBL4\Disk Information\obj\Debug\Disk Information.csproj.CoreCompileInputs.cache
 D:\Study\Năm 3-Kì 1\PBL4\PBL4\Disk Information\obj\Debug\Disk Information.exe
 D:\Study\Năm 3-Kì 1\PBL4\PBL4\Disk Information\obj\Debug\Disk Information.pdb
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\bin\Debug\Disk Information.exe.config
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\bin\Debug\Disk Information.exe
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\bin\Debug\Disk Information.pdb
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk Information.csproj.AssemblyReference.cache
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk Information.csproj.SuggestedBindingRedirects.cache
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk_Information.Form1.resources
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk_Information.Properties.Resources.resources
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk Information.csproj.GenerateResource.cache
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk Information.csproj.CoreCompileInputs.cache
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk Information.exe
+D:\Study\Năm 3-Kì 1\PBL4\PBL4_index2\PBL4\Disk Information\obj\Debug\Disk Information.pdb
