@@ -34,6 +34,8 @@ namespace TCPClient
                 int port = Convert.ToInt32(tbPort.Text);
 
                 client.Connect(IP, port, client);
+                btnConnect.BackColor = Color.Green;
+                btnConnect.Text = "Connecting";
             }
 
         }

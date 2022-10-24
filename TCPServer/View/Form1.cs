@@ -36,6 +36,7 @@ namespace TCPServer
                 int port = Convert.ToInt32(tbPort.Text);
                 server.Connect(ipAddress, port);
                 tbStatus.Text = "Server running";
+                tbStatus.BackColor = Color.Green;
             }
             else
             {
@@ -52,10 +53,11 @@ namespace TCPServer
             {
                 server.Stop();
                 tbStatus.Text = "Server turn off";
+                tbStatus.BackColor = Color.Red;
             }
             else
-            {
-                MessageBox.Show("Server not start");
+            {   
+                MessageBox.Show("Server not start","Warning");
             }    
         }
         public void UpdateClient(List<Client> clients)
@@ -80,6 +82,7 @@ namespace TCPServer
             string IP = dgvClient.SelectedRows[0].Cells["IP"].Value.ToString();
             server.Send(IP, "info");
         }
-        
+
+       
     }
 }

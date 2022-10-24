@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.tbIP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -125,7 +126,7 @@
             // 
             // tbStatus
             // 
-            this.tbStatus.Font = new System.Drawing.Font("Blackadder ITC", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStatus.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStatus.Location = new System.Drawing.Point(225, 110);
             this.tbStatus.Multiline = true;
             this.tbStatus.Name = "tbStatus";
@@ -402,6 +403,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbIP);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Server";
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();

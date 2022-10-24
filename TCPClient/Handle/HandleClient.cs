@@ -23,7 +23,7 @@ namespace TCPClient
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 try
                 {
-
+                    
                     socket.Connect(new IPEndPoint(IPAddress.Parse(ipAddress), port));
                     new Task(async () =>
                     {
