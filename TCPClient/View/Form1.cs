@@ -22,13 +22,20 @@ namespace TCPClient
 
         }
         private void btnConnect_Click(object sender, EventArgs e)
-        {   
-            
-            btnConnect.Enabled = false;
-            string IP = tbIP.Text;
-            int port = Convert.ToInt32(tbPort.Text);
-            client.Connect(IP,port,client);
-            
+        {
+
+            if (tbIP.Text.Length == 0 || tbPort.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill it out completely");
+            }
+            else
+            {
+                string IP = tbIP.Text;
+                int port = Convert.ToInt32(tbPort.Text);
+
+                client.Connect(IP, port, client);
+            }
+
         }
 
 
