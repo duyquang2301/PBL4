@@ -50,10 +50,10 @@ namespace TCPClient
                 data.freeSpace = drive.TotalFreeSpace;
                 data.sectorsPerClusters = sectorsPerCluster;
                 data.bytesPerSectors = bytesPerSector;
-
+                getSerialNumberHardDisk(data);
                 hardDisks.Add(data);
             }
-            hardDisks.Add(getSerialNumberHardDisk(serial));
+           
             return hardDisks;
         }
     }

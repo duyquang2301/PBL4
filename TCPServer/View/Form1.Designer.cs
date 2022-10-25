@@ -41,31 +41,24 @@
             this.Clients = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPartitions = new System.Windows.Forms.TextBox();
             this.txtCapacity = new System.Windows.Forms.TextBox();
-            this.txtSerialNumber = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtfreespace = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
+            this.txtFormat = new System.Windows.Forms.TextBox();
+            this.txtText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbbSelectedVolume = new System.Windows.Forms.ComboBox();
+            this.lbserinumber = new System.Windows.Forms.Label();
             this.lbl_BytesPerSector = new System.Windows.Forms.Label();
             this.lbl_TracksPerCylinder = new System.Windows.Forms.Label();
-            this.lbl_SectorsPerTrack = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCylinders = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtHeads = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtSectors = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtTracks = new System.Windows.Forms.TextBox();
-            this.txtSelectedDisk = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -170,200 +163,120 @@
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(443, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 17);
+            this.label3.Size = new System.Drawing.Size(112, 17);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Selected Disk";
+            this.label3.Text = "Selected Volume";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtPartitions);
             this.panel2.Controls.Add(this.txtCapacity);
-            this.panel2.Controls.Add(this.txtSerialNumber);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.txtfreespace);
             this.panel2.Controls.Add(this.txtType);
+            this.panel2.Controls.Add(this.txtFormat);
+            this.panel2.Controls.Add(this.txtText);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(446, 110);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(280, 162);
+            this.panel2.Size = new System.Drawing.Size(280, 198);
             this.panel2.TabIndex = 11;
-            // 
-            // txtPartitions
-            // 
-            this.txtPartitions.Location = new System.Drawing.Point(113, 122);
-            this.txtPartitions.Name = "txtPartitions";
-            this.txtPartitions.Size = new System.Drawing.Size(164, 20);
-            this.txtPartitions.TabIndex = 7;
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(113, 88);
+            this.txtCapacity.Location = new System.Drawing.Point(113, 159);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(164, 20);
-            this.txtCapacity.TabIndex = 6;
+            this.txtCapacity.TabIndex = 17;
             // 
-            // txtSerialNumber
+            // label14
             // 
-            this.txtSerialNumber.Location = new System.Drawing.Point(113, 51);
-            this.txtSerialNumber.Name = "txtSerialNumber";
-            this.txtSerialNumber.Size = new System.Drawing.Size(164, 20);
-            this.txtSerialNumber.TabIndex = 5;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(13, 162);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 17);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Capacity";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(13, 13);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 17);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Name";
+            // 
+            // txtfreespace
+            // 
+            this.txtfreespace.Location = new System.Drawing.Point(113, 122);
+            this.txtfreespace.Name = "txtfreespace";
+            this.txtfreespace.Size = new System.Drawing.Size(164, 20);
+            this.txtfreespace.TabIndex = 7;
             // 
             // txtType
             // 
-            this.txtType.Location = new System.Drawing.Point(113, 13);
+            this.txtType.Location = new System.Drawing.Point(113, 88);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(164, 20);
-            this.txtType.TabIndex = 4;
+            this.txtType.TabIndex = 6;
+            // 
+            // txtFormat
+            // 
+            this.txtFormat.Location = new System.Drawing.Point(113, 51);
+            this.txtFormat.Name = "txtFormat";
+            this.txtFormat.Size = new System.Drawing.Size(164, 20);
+            this.txtFormat.TabIndex = 5;
+            // 
+            // txtText
+            // 
+            this.txtText.Location = new System.Drawing.Point(113, 13);
+            this.txtText.Name = "txtText";
+            this.txtText.Size = new System.Drawing.Size(164, 20);
+            this.txtText.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(13, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Partitions";
+            this.label5.Text = "Free Space";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(13, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Capacity";
+            this.label4.Text = "Type";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(11, 54);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Serial Number";
+            this.label6.Text = "Format";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(13, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Type";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lbl_BytesPerSector);
-            this.panel3.Controls.Add(this.lbl_TracksPerCylinder);
-            this.panel3.Controls.Add(this.lbl_SectorsPerTrack);
-            this.panel3.Location = new System.Drawing.Point(446, 337);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(280, 100);
-            this.panel3.TabIndex = 19;
-            // 
-            // lbl_BytesPerSector
-            // 
-            this.lbl_BytesPerSector.AutoSize = true;
-            this.lbl_BytesPerSector.Location = new System.Drawing.Point(3, 12);
-            this.lbl_BytesPerSector.Name = "lbl_BytesPerSector";
-            this.lbl_BytesPerSector.Size = new System.Drawing.Size(85, 13);
-            this.lbl_BytesPerSector.TabIndex = 15;
-            this.lbl_BytesPerSector.Text = "Bytes per Sector";
-            // 
-            // lbl_TracksPerCylinder
-            // 
-            this.lbl_TracksPerCylinder.AutoSize = true;
-            this.lbl_TracksPerCylinder.Location = new System.Drawing.Point(3, 73);
-            this.lbl_TracksPerCylinder.Name = "lbl_TracksPerCylinder";
-            this.lbl_TracksPerCylinder.Size = new System.Drawing.Size(98, 13);
-            this.lbl_TracksPerCylinder.TabIndex = 17;
-            this.lbl_TracksPerCylinder.Text = "Tracks per Cylinder";
-            // 
-            // lbl_SectorsPerTrack
-            // 
-            this.lbl_SectorsPerTrack.AutoSize = true;
-            this.lbl_SectorsPerTrack.Location = new System.Drawing.Point(3, 44);
-            this.lbl_SectorsPerTrack.Name = "lbl_SectorsPerTrack";
-            this.lbl_SectorsPerTrack.Size = new System.Drawing.Size(92, 13);
-            this.lbl_SectorsPerTrack.TabIndex = 16;
-            this.lbl_SectorsPerTrack.Text = "Sectors per Track";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(443, 284);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 17);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Cylinders";
-            // 
-            // txtCylinders
-            // 
-            this.txtCylinders.Location = new System.Drawing.Point(515, 283);
-            this.txtCylinders.Name = "txtCylinders";
-            this.txtCylinders.Size = new System.Drawing.Size(70, 20);
-            this.txtCylinders.TabIndex = 21;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(598, 284);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 17);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Heads";
-            // 
-            // txtHeads
-            // 
-            this.txtHeads.Location = new System.Drawing.Point(656, 281);
-            this.txtHeads.Name = "txtHeads";
-            this.txtHeads.Size = new System.Drawing.Size(70, 20);
-            this.txtHeads.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(447, 311);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 17);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Sectors";
-            // 
-            // txtSectors
-            // 
-            this.txtSectors.Location = new System.Drawing.Point(515, 307);
-            this.txtSectors.Name = "txtSectors";
-            this.txtSectors.Size = new System.Drawing.Size(70, 20);
-            this.txtSectors.TabIndex = 25;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(598, 307);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 17);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Tracks";
-            // 
-            // txtTracks
-            // 
-            this.txtTracks.Location = new System.Drawing.Point(656, 308);
-            this.txtTracks.Name = "txtTracks";
-            this.txtTracks.Size = new System.Drawing.Size(70, 20);
-            this.txtTracks.TabIndex = 27;
-            // 
-            // txtSelectedDisk
-            // 
-            this.txtSelectedDisk.Location = new System.Drawing.Point(559, 79);
-            this.txtSelectedDisk.Name = "txtSelectedDisk";
-            this.txtSelectedDisk.Size = new System.Drawing.Size(164, 20);
-            this.txtSelectedDisk.TabIndex = 28;
             // 
             // label12
             // 
@@ -374,23 +287,56 @@
             this.label12.TabIndex = 29;
             this.label12.Text = "Read hard drive information in workstations";
             // 
+            // cbbSelectedVolume
+            // 
+            this.cbbSelectedVolume.FormattingEnabled = true;
+            this.cbbSelectedVolume.Location = new System.Drawing.Point(559, 82);
+            this.cbbSelectedVolume.Name = "cbbSelectedVolume";
+            this.cbbSelectedVolume.Size = new System.Drawing.Size(167, 21);
+            this.cbbSelectedVolume.TabIndex = 21;
+            this.cbbSelectedVolume.SelectedIndexChanged += new System.EventHandler(this.cbbSelectedVolume_SelectedIndexChanged);
+            // 
+            // lbserinumber
+            // 
+            this.lbserinumber.AutoSize = true;
+            this.lbserinumber.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbserinumber.Location = new System.Drawing.Point(459, 349);
+            this.lbserinumber.Name = "lbserinumber";
+            this.lbserinumber.Size = new System.Drawing.Size(97, 17);
+            this.lbserinumber.TabIndex = 30;
+            this.lbserinumber.Text = "Serial Number";
+            // 
+            // lbl_BytesPerSector
+            // 
+            this.lbl_BytesPerSector.AutoSize = true;
+            this.lbl_BytesPerSector.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_BytesPerSector.Location = new System.Drawing.Point(457, 383);
+            this.lbl_BytesPerSector.Name = "lbl_BytesPerSector";
+            this.lbl_BytesPerSector.Size = new System.Drawing.Size(107, 17);
+            this.lbl_BytesPerSector.TabIndex = 31;
+            this.lbl_BytesPerSector.Text = "Bytes per Sector";
+            // 
+            // lbl_TracksPerCylinder
+            // 
+            this.lbl_TracksPerCylinder.AutoSize = true;
+            this.lbl_TracksPerCylinder.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_TracksPerCylinder.Location = new System.Drawing.Point(457, 425);
+            this.lbl_TracksPerCylinder.Name = "lbl_TracksPerCylinder";
+            this.lbl_TracksPerCylinder.Size = new System.Drawing.Size(116, 17);
+            this.lbl_TracksPerCylinder.TabIndex = 32;
+            this.lbl_TracksPerCylinder.Text = "Sector per cluster";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(786, 514);
+            this.Controls.Add(this.lbl_TracksPerCylinder);
+            this.Controls.Add(this.lbl_BytesPerSector);
+            this.Controls.Add(this.lbserinumber);
+            this.Controls.Add(this.cbbSelectedVolume);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtSelectedDisk);
-            this.Controls.Add(this.txtTracks);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtSectors);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtHeads);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtCylinders);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Clients);
@@ -409,8 +355,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,28 +374,22 @@
         private System.Windows.Forms.Label Clients;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtPartitions;
-        private System.Windows.Forms.TextBox txtCapacity;
-        private System.Windows.Forms.TextBox txtSerialNumber;
+        private System.Windows.Forms.TextBox txtfreespace;
         private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.TextBox txtFormat;
+        private System.Windows.Forms.TextBox txtText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lbl_BytesPerSector;
-        private System.Windows.Forms.Label lbl_TracksPerCylinder;
-        private System.Windows.Forms.Label lbl_SectorsPerTrack;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCylinders;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtHeads;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtSectors;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTracks;
-        private System.Windows.Forms.TextBox txtSelectedDisk;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbbSelectedVolume;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbserinumber;
+        private System.Windows.Forms.Label lbl_BytesPerSector;
+        private System.Windows.Forms.TextBox txtCapacity;
+        private System.Windows.Forms.Label lbl_TracksPerCylinder;
     }
 }
 

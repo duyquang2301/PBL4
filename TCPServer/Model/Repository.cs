@@ -11,11 +11,24 @@ namespace TCPServer.Model
     {
         public List<Client> Clients { get; set; }
         public List<Socket> ClientSockets { get; set; }
+
+        public static Repository instance;
+
+
         public Repository()
         {
             Clients = new List<Client>();
             ClientSockets = new List<Socket>();
            // Responses = new List<ResponseLog>();
+        }
+
+        public static Repository GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Repository();
+            }
+            return instance;
         }
         public void AddClient(Socket socket)
         {
@@ -36,6 +49,12 @@ namespace TCPServer.Model
             Clients.Clear();
             ClientSockets.Clear();
           //  Responses.Clear();
+        }
+        public Socket getSocket(string IP)
+        {
+            Socket socket;
+               socket = ClientSockets.Find(x => x.RemoteEndPoint.ToString() == IP);
+            return socket;
         }
     }
 }

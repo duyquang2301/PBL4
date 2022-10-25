@@ -114,3 +114,4 @@ C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.csproj.CoreComp
 C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.exe
 C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.pdb
+D:\Study\Năm 3-Kì 1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.View.detail.resources

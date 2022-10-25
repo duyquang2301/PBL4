@@ -53,6 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CBBitems.cs" />
+    <Compile Include="View\detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\detail.Designer.cs">
+      <DependentUpon>detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response\DTOresponse.cs" />
+    <EmbeddedResource Include="View\detail.resx">
+      <DependentUpon>detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

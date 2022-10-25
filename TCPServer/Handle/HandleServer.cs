@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using TCPClient.Request;
 using TCPServer.Model;
 using TCPServer.Response;
+using TCPServer.View;
 
 namespace TCPServer
 {
@@ -18,19 +19,39 @@ namespace TCPServer
     {
         private Socket Socket;
 
+        private static HandleServer _Instance;
+
+        public List<CBBitems> CBBitems { get;  set; }
+        public List<DTOresponse> result { get; set; }
+        public static HandleServer Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    _Instance = new HandleServer();
+                }
+                return _Instance;
+
+            }
+            private set { _Instance = value; }
+
+        }
 
         private Repository Repository;
+              
 
         public Action<List<Client>> OnClientConnectionStateChanged;
         public HandleServer()
         {
             Repository = new Repository();
+           
         }
         public List<Client> clients { get; set; }
 
 
 
-        internal void Stop()
+        public void Stop()
         {
             foreach (Socket clientSocket in Repository.ClientSockets)
             {
@@ -47,6 +68,8 @@ namespace TCPServer
         }
         public void Connect(string ipAddress, int port)
         {
+            CBBitems = new List<CBBitems>();
+            result = new List<DTOresponse>();
             if (!IsListening())
             {   
                 Socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -62,6 +85,8 @@ namespace TCPServer
                             Repository.AddClient(clientSocket);
                             OnClientConnectionStateChanged?.Invoke(Repository.Clients);
                             new Task(() => Receive(clientSocket)).Start();
+                            
+                            
                         }
                         catch (SocketException)
                         {
@@ -72,21 +97,42 @@ namespace TCPServer
             }
         }
 
+        //public List<DTOresponse> Receive(Socket socket)
+        //{
+        //    List<DTOresponse> result = new List<DTOresponse>();
+        //    var res = ProcessRequest(socket);
+     
+        //        foreach (var info in res)
+        //        {
+        //            result.Add(info);
+        //        }
+        //        detail f2 = new detail(result);
+        //       f2.Show();
+
+        //}
+    
         public void Receive(Socket socket)
         {
+            
             var res = ProcessRequest(socket);
-            if (res != null)
+            foreach (var info in res)
             {
-                foreach (var info in res)
-                {
-                    MessageBox.Show(info.nameDisk);
-                }
+                result.Add(info);
+                CBBitems.Add(new CBBitems { Key=info.nameDisk,Text=info.nameDisk});
+            }
+        
+        }
 
-            }
-            else
+        public  List <DTOresponse> getdata(Socket socket)
+        {
+            List<DTOresponse> list = new List<DTOresponse>();
+            var res = ProcessRequest(socket);
+            foreach (var i in res)
             {
-                MessageBox.Show("Not read");
+                list.Add(i);
             }
+            MessageBox.Show(list.ToString());
+            return list;
         }
 
         public List<DTOresponse> ProcessRequest(Socket clientSocket)
@@ -103,10 +149,13 @@ namespace TCPServer
 
 
 
-        public void Send(string IP, string message)
+
+
+        public Socket Send(string IP, string message)
         {
             Socket socket = Repository.ClientSockets.FirstOrDefault(x => x.RemoteEndPoint.ToString() == IP);
             socket.Send(Encoding.UTF8.GetBytes(message));
+            return socket;
         }
         public bool IsListening()
         {
