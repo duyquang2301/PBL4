@@ -40,6 +40,9 @@ namespace TCPClient
 
         }
 
-
+        //private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    client.Disconnect();
+        //}
     }
 }

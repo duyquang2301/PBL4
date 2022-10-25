@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using TCPClient.Request;
 using TCPServer.Model;
 using TCPServer.Response;
-using TCPServer.View;
 
 namespace TCPServer
 {
@@ -96,20 +95,6 @@ namespace TCPServer
                 }).Start();
             }
         }
-
-        //public List<DTOresponse> Receive(Socket socket)
-        //{
-        //    List<DTOresponse> result = new List<DTOresponse>();
-        //    var res = ProcessRequest(socket);
-     
-        //        foreach (var info in res)
-        //        {
-        //            result.Add(info);
-        //        }
-        //        detail f2 = new detail(result);
-        //       f2.Show();
-
-        //}
     
         public void Receive(Socket socket)
         {

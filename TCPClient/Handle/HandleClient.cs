@@ -40,7 +40,14 @@ namespace TCPClient
                         while (true)
                         {
                             byte[] buffer = new byte[1024];
-                            socket.Receive(buffer);
+                            try
+                            {
+                                socket.Receive(buffer);
+                            }
+                            catch (Exception e)
+                            {
+
+                            }
                             string message = Encoding.UTF8.GetString(buffer).Replace("\0", "");
                             switch (message)
                             {
@@ -121,6 +128,15 @@ namespace TCPClient
                 catch (ObjectDisposedException)
                 {
                     return false;
+                }
+            }
+            public void Disconnect()
+            {
+                if (socket != null)
+                {
+                    socket.Shutdown(SocketShutdown.Both);
+                    socket.Close();
+                    socket = null;
                 }
             }
     }
