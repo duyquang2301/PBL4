@@ -83,17 +83,29 @@ namespace TCPServer
         }
 
         private void btnRead_Click(object sender, EventArgs e)
-        {   
-
+        {
+            resetCBB();
             string IP = dgvClient.SelectedRows[0].Cells["IP"].Value.ToString();
             server.Send(IP, "info");
             cbbSelectedVolume.Items.AddRange(server.CBBitems.ToArray());
-
+            
         }
-
+        private void resetCBB()
+        {
+            cbbSelectedVolume.Items.Clear();
+            txtText.Text = "";
+            txtFormat.Text = "";
+            txtType.Text = "";
+            txtfreespace.Text = "";
+            txtCapacity.Text = "";
+            lbl_BytesPerSector.Text = "Bytes per Sector";
+            lbserinumber.Text = "Serial Number";
+            lbl_TracksPerCylinder.Text = "Sector Cluster";
+        }
         private void cbbSelectedVolume_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            
+
             if(cbbSelectedVolume.SelectedIndex != -1)
             {
                 txtText.Text = server.result[cbbSelectedVolume.SelectedIndex].nameDisk.ToString();
