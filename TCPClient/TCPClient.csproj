@@ -61,10 +61,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Handle\HandleClient.cs" />
-    <Compile Include="Request\HardDisk.cs" />
+    <Compile Include="Model\HardDisk.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Request\DTOrequest.cs" />
+    <Compile Include="Model\DTOrequest.cs" />
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

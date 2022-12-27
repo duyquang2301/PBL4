@@ -57,6 +57,8 @@
             this.lbserinumber = new System.Windows.Forms.Label();
             this.lbl_BytesPerSector = new System.Windows.Forms.Label();
             this.lbl_TracksPerCylinder = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -281,7 +283,7 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(43, 13);
+            this.label12.Location = new System.Drawing.Point(43, 15);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(680, 52);
             this.label12.TabIndex = 29;
@@ -326,12 +328,34 @@
             this.lbl_TracksPerCylinder.TabIndex = 32;
             this.lbl_TracksPerCylinder.Text = "Sector per cluster";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(306, 272);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 33;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(306, 239);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Show";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(786, 514);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lbl_TracksPerCylinder);
             this.Controls.Add(this.lbl_BytesPerSector);
             this.Controls.Add(this.lbserinumber);
@@ -352,8 +376,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Server";
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -392,6 +415,8 @@
         private System.Windows.Forms.Label lbl_BytesPerSector;
         private System.Windows.Forms.TextBox txtCapacity;
         private System.Windows.Forms.Label lbl_TracksPerCylinder;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TCPServer",
+    "\\TCPServer\\Handle",
+    "\\TCPServer\\View"
   ],
-  "SelectedNode": "\\TCPServer.sln",
+  "SelectedNode": "\\TCPServer\\Handle\\HandleServer.cs",
   "PreviewInSolutionExplorer": false
 }

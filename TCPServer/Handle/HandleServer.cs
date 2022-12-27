@@ -95,6 +95,12 @@ namespace TCPServer
                 }).Start();
             }
         }
+        public void clearData(string ipAddress, int port)
+        {
+            CBBitems.Clear();
+            result.Clear();
+            Connect( ipAddress,  port);
+        }
     
         public void Receive(Socket socket)
         {
@@ -105,7 +111,7 @@ namespace TCPServer
                 result.Add(info);
                 CBBitems.Add(new CBBitems { Key=info.nameDisk,Text=info.nameDisk});
             }
-        
+         
         }
 
         public  List <DTOresponse> getdata(Socket socket)

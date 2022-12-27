@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCPServer.Model;
@@ -58,7 +59,7 @@ namespace TCPServer
             {
                 server.Stop();
                 tbStatus.Text = "Server turn off";
-                tbStatus.BackColor = Color.Red;
+                tbStatus.BackColor = Color.MistyRose;
             }
             else
             {   
@@ -83,16 +84,19 @@ namespace TCPServer
         }
 
         private void btnRead_Click(object sender, EventArgs e)
-        {
-            resetCBB();
-            string IP = dgvClient.SelectedRows[0].Cells["IP"].Value.ToString();
-            server.Send(IP, "info");
-            cbbSelectedVolume.Items.AddRange(server.CBBitems.ToArray());
+        {   
             
+            string IP = dgvClient.SelectedRows[0].Cells["IP"].Value.ToString();
+        
+            server.Send(IP, "info");
+            Thread.Sleep(120);
+           
         }
         private void resetCBB()
         {
             cbbSelectedVolume.Items.Clear();
+            cbbSelectedVolume.DataSource = null;
+            cbbSelectedVolume.Text = "";
             txtText.Text = "";
             txtFormat.Text = "";
             txtType.Text = "";
@@ -129,15 +133,29 @@ namespace TCPServer
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+    
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //string ipAddress = tbIP.Text;
+            //int port = Convert.ToInt32(tbPort.Text);
+            resetCBB();
+            //server.clearData(ipAddress,port);
+            
         }
 
-        //private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    server.Stop();
-        //}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(server.CBBitems.ToString());
+            cbbSelectedVolume.Items.AddRange(server.CBBitems.ToArray());
+        }
+
+
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            server.Stop();
+        }
     }
 
 }

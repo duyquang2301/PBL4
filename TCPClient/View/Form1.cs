@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,10 @@ namespace TCPClient
         public Form1()
         {
             InitializeComponent();
-            client = new HandleClient();
+            client = new HandleClient()
+            {
+                OnConnectionStateChanged = DisconnectedHandler
+            };
 
         }
         private void btnConnect_Click(object sender, EventArgs e)
@@ -33,10 +37,46 @@ namespace TCPClient
                 string IP = tbIP.Text;
                 int port = Convert.ToInt32(tbPort.Text);
 
-                client.Connect(IP, port, client);
-                btnConnect.BackColor = Color.Green;
-                btnConnect.Text = "Connecting";
+                
+                if(client.IsConnected())
+                {
+                    client.Disconnect();
+                    ConnectionStateChanged(false);
+                }
+                else
+                {
+
+                    try
+                    {
+                        client.Connect(IP, port);
+                        ConnectionStateChanged(true);
+                    }
+                    catch (SocketException)
+                    {
+                        ConnectionStateChanged(false);
+                        MessageBox.Show("Can't connect to server", "notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+                    }
+                }    
+                
             }
+
+        }
+        private void DisconnectedHandler()
+        {
+            Invoke(new MethodInvoker(() =>
+            {
+                MessageBox.Show("Server has been shut down", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConnectionStateChanged(false);
+            }));
+        }
+
+        private void ConnectionStateChanged(bool v)
+        {
+            tbIP.Enabled = !v;
+            tbPort.Enabled = !v;
+            btnConnect.Text = v ? "Connecting" : "Connect";
+            btnConnect.BackColor = v ? Color.GreenYellow : Color.MistyRose;
 
         }
 

@@ -16,7 +16,7 @@ namespace TCPClient
         private Socket socket;
      
         public Action OnConnectionStateChanged;
-        public void Connect(string ipAddress, int port, HandleClient clients)
+        public void Connect(string ipAddress, int port)
             {
 
             if (!IsConnected())
@@ -39,6 +39,7 @@ namespace TCPClient
                     {
                         while (true)
                         {
+                            List<DTOrequest> list = new List<DTOrequest>();
                             byte[] buffer = new byte[1024];
                             try
                             {
@@ -54,7 +55,7 @@ namespace TCPClient
                                 case "info":
                                     {
                                         var disks = new DiskHandler().getInfomationHardDisk();
-                                        List<DTOrequest> list = new List<DTOrequest>();
+                                        
                                         foreach (var disk in disks)
                                         {
                                             list.Add(new DTOrequest
@@ -69,6 +70,12 @@ namespace TCPClient
                                                 BytesPerSector = disk.bytesPerSectors
                                             });
                                         }
+                                        socket.Send(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(list)));
+                                        break;
+                                    }
+                                case "clear":
+                                    {  
+                                        list.Clear();
                                         socket.Send(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(list)));
                                         break;
                                     }

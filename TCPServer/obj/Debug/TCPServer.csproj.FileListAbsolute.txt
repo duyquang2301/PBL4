@@ -114,7 +114,6 @@ C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.csproj.CoreComp
 C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.exe
 C:\Users\Admin\Source\Repos\PBL4_1\TCPServer\obj\Debug\TCPServer.pdb
-D:\Study\Năm 3-Kì 1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.View.detail.resources
 C:\Users\Admin\Source\Repos\PBL4\TCPServer\bin\Debug\TCPServer.exe.config
 C:\Users\Admin\Source\Repos\PBL4\TCPServer\bin\Debug\TCPServer.exe
 C:\Users\Admin\Source\Repos\PBL4\TCPServer\bin\Debug\TCPServer.pdb
@@ -133,3 +132,21 @@ C:\Users\Admin\Source\Repos\PBL4\TCPServer\obj\Debug\TCPServer.csproj.CoreCompil
 C:\Users\Admin\Source\Repos\PBL4\TCPServer\obj\Debug\TCPServer.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\PBL4\TCPServer\obj\Debug\TCPServer.exe
 C:\Users\Admin\Source\Repos\PBL4\TCPServer\obj\Debug\TCPServer.pdb
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\TCPServer.exe.config
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\TCPServer.exe
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\TCPServer.pdb
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\Newtonsoft.Json.dll
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\SimpleTCP.dll
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\TCPClient.exe
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\TCPClient.pdb
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\TCPClient.exe.config
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\bin\Debug\Newtonsoft.Json.xml
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.csproj.AssemblyReference.cache
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.csproj.SuggestedBindingRedirects.cache
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.Form1.resources
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.Properties.Resources.resources
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.csproj.GenerateResource.cache
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.csproj.CoreCompileInputs.cache
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.csproj.CopyComplete
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.exe
+D:\Study\NAM3_1\PBL4\PBL4\TCPServer\obj\Debug\TCPServer.pdb
