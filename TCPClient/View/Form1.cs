@@ -53,7 +53,6 @@ namespace TCPClient
                     }
                     catch (SocketException)
                     {
-                        ConnectionStateChanged(false);
                         MessageBox.Show("Can't connect to server", "notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         
                     }

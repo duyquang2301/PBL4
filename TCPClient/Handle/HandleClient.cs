@@ -47,7 +47,7 @@ namespace TCPClient
                             }
                             catch (Exception e)
                             {
-
+                                MessageBox.Show(e.Message);
                             }
                             string message = Encoding.UTF8.GetString(buffer).Replace("\0", "");
                             switch (message)
@@ -60,14 +60,14 @@ namespace TCPClient
                                         {
                                             list.Add(new DTOrequest
                                             {
-                                                NameDisk = disk.physicalName,
-                                                SerialNumber = disk.serialNumber,
+                                                NameDisk = disk.NameDisk,
+                                                SerialNumber = disk.SerialNumber,
                                                 driveType = disk.driveType,
                                                 driveFormat = disk.driveFormat,
                                                 totalSize = disk.totalSize,
                                                 freeSpace = disk.freeSpace,
-                                                SectorsPerCluster = disk.sectorsPerClusters,
-                                                BytesPerSector = disk.bytesPerSectors
+                                                SectorsPerCluster = disk.SectorsPerCluster,
+                                                BytesPerSector = disk.BytesPerSector
                                             });
                                         }
                                         socket.Send(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(list)));
