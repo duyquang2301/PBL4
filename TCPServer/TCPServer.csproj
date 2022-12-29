@@ -62,7 +62,6 @@
     </Compile>
     <Compile Include="Handle\HandleServer.cs" />
     <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\HardDisk.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -61,7 +61,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Handle\HandleClient.cs" />
-    <Compile Include="Model\HardDisk.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\DTOrequest.cs" />
